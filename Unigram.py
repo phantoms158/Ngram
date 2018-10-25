@@ -16,7 +16,7 @@ class UnigramLanguageModel:
                 for word in words:
                     self.counts[word] = self.counts.get(word, 0) + 1
                     self.total_count += 1
-        with open("./model_file.txt", "w") as f:
+        with open("./model_file_wiki.txt", "w") as f:
             for word in self.counts:
                 probability = float(self.counts[word]/self.total_count)
                 f.write(word + " " + str(probability)+"\n")
@@ -30,7 +30,7 @@ def Load_Model(file_path):
     return probabilities
 
 def Test_and_Print(file_test_path):
-    probabilities = Load_Model("./model_file.txt")
+    probabilities = Load_Model("./model_file_wiki.txt")
     print(probabilities)
     lamda1 = 0.95
     lamdaunk = 1 - lamda1
@@ -65,6 +65,8 @@ if __name__ == '__main__':
 
     data_train_path = "./test/01-train-input.txt"
     data_test_path = "./test/01-test-input.txt"
-    # dataset_model = UnigramLanguageModel(data_train_path)
+    data_train_wiki_path = "./data/wiki-en-train.word"
+    data_test_wiki_path = "./data/wiki-en-test.word"
+    # dataset_model = UnigramLanguageModel(data_train_wiki_path)
     # print(dataset_model)
     Test_and_Print(data_test_path)
