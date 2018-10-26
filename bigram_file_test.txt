@@ -1,0 +1,11 @@
+i live  0.5
+live in  1.0
+in osaka  0.5
+i am  0.5
+am a  1.0
+a graduate  1.0
+graduate student  1.0
+my school  1.0
+school is  1.0
+is in  1.0
+in nara  0.5
